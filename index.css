@@ -1,110 +1,124 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
-  transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    transition: background 0.3s;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #333;
-  transition: color 0.3s;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+    transition: color 0.3s;
 }
 
 .container {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 input[type="color"] {
-  width: 150px;
-  height: 150px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+    width: 150px;
+    height: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hex-display {
+    margin: 2rem 0;
+}
+
+.hex-display label {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 #colorHex {
-  margin-top: 1.5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1.5rem;
-  border-radius: 1rem;
-  background-size: 30px 30px;
-  background-image:
-    linear-gradient(to right,
-      #ddd 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom,
-      #ddd 1px,
-      transparent 1px
-  );
-  padding: 20px 25px;
-  border: 1px solid #333;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    padding: 25px 35px;
+    border: 2px solid #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    font-family: "Courier New", monospace;
+    transition: all 0.3s ease;
+}
+
+#colorHex:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .copy-success {
-  position: fixed;
-  bottom: 20px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  font-weight: bold;
-  transition: opacity 0.3s, visibility 0.3s;
+    position: fixed;
+    bottom: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    font-weight: bold;
+    transition:
+        opacity 0.3s,
+        visibility 0.3s;
 }
 
 .copy-success.show {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }

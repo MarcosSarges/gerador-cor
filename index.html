@@ -1,27 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gerador de COR HEX</title>
+        <link rel="stylesheet" href="./index.css" />
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador de COR HEX</title>
-  <link rel="stylesheet" href="./index.css">
-</head>
+    <body>
+        <h1>Gerador de COR HEX</h1>
+        <div class="container">
+            <input type="color" id="colorInput" value="#000000" />
+            <div class="hex-display">
+                <label for="colorHex">Código HEX:</label>
+                <p id="colorHex">#000000</p>
+            </div>
+            <div class="buttons">
+                <button id="randomBtn">Gerar cor aleatória</button>
+                <button id="copyBtn">Copiar</button>
+            </div>
+        </div>
+    </body>
 
-<body>
-  <h1>Gerador de COR HEX</h1>
-  <div class="container">
-    <input type="color" id="colorInput" value="#000000">
-    <p id="colorHex">#000000</p>
-    <div class="buttons">
-      <button id="randomBtn">Gerar cor aleatória</button>
-      <button id="copyBtn">Copiar</button>
-    </div>
-  </div>
-</body>
+    <div id="copy-notification" class="copy-success"></div>
 
-<div id="copy-notification" class="copy-success"></div>
-
-<script src="./index.js"></script>
-
+    <script src="./index.js"></script>
 </html>
