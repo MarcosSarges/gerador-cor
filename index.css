@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  transition: background 0.3s;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+input[type="color"] {
+  width: 150px;
+  height: 150px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#colorHex {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
