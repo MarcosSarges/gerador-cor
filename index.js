@@ -76,15 +76,26 @@ randomBtn.addEventListener("click", () => {
 copyBtn.addEventListener("click", copyHexToClipboard);
 
 colorHex.addEventListener("input", (e) => {
-  let value = e.target.value;
+  let value = e.target.value.toUpperCase();
+
+  value = value.replace(/[^#0-9A-F]/gi, "");
 
   if (!value.startsWith("#")) {
-    value = "#" + value;
+    value = "#" + value.replace(/#/g, "");
   }
 
-  const hexPattern = /^#([0-9A-Fa-f]{0,6})$/;
+  const parts = value.split("#");
+  if (parts.length > 2) {
+    value = "#" + parts.slice(1).join("");
+  }
 
-  if (hexPattern.test(value)) {
+  if (value.length > 7) {
+    value = value.substring(0, 7);
+  }
+
+  e.target.value = value;
+
+  if (value.length === 7) {
     colorInput.value = value;
     updateColor(value);
   }
