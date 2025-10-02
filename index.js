@@ -7,9 +7,9 @@ const copyBtn = document.getElementById("copyBtn");
 function getContrastColor(hexColor) {
   const hex = hexColor.replace("#", "");
 
-  const r = parseInt(hex.substr(0, 2), 16);
-  const g = parseInt(hex.substr(2, 2), 16);
-  const b = parseInt(hex.substr(4, 2), 16);
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
 
   const luminosity = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
@@ -43,7 +43,7 @@ function copyHexToClipboard() {
 }
 
 function showCopyNotification(hex) {
-  let notification = document.getElementById("copyNotification");
+  let notification = document.getElementById("copy-notification");
   if (!notification) {
     notification = document.createElement("div");
     notification.id = "copy-notification";
@@ -59,16 +59,16 @@ function showCopyNotification(hex) {
   }, 2000);
 }
 
+function generateRandomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+}
+
 colorInput.addEventListener("input", (e) => {
   updateColor(e.target.value);
 });
 
 randomBtn.addEventListener("click", () => {
-  const randomColor =
-    "#" +
-    Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, "0");
+  const randomColor = generateRandomColor();
   colorInput.value = randomColor;
   updateColor(randomColor);
 });
@@ -76,11 +76,7 @@ randomBtn.addEventListener("click", () => {
 copyBtn.addEventListener("click", copyHexToClipboard);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const randomColor =
-    "#" +
-    Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .padStart(6, "0");
+  const randomColor = generateRandomColor();
   colorInput.value = randomColor;
   updateColor(randomColor);
 });
