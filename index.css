@@ -94,11 +94,20 @@ input[type="color"] {
   letter-spacing: 2px;
   font-family: "Courier New", monospace;
   transition: all 0.3s ease;
+  text-align: center;
+  width: auto;
+  max-width: 300px;
 }
 
 #colorHex:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#colorHex:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 
 .buttons {

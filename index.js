@@ -17,7 +17,7 @@ function getContrastColor(hexColor) {
 }
 
 function updateColor(color) {
-  colorHex.textContent = `${color.toUpperCase()}`;
+  colorHex.value = color.toUpperCase();
   document.body.style.background = color;
 
   const textColor = getContrastColor(color);
@@ -27,7 +27,7 @@ function updateColor(color) {
 }
 
 function copyHexToClipboard() {
-  const hexCode = colorHex.textContent;
+  const hexCode = colorHex.value;
 
   navigator.clipboard
     .writeText(hexCode)
@@ -74,6 +74,32 @@ randomBtn.addEventListener("click", () => {
 });
 
 copyBtn.addEventListener("click", copyHexToClipboard);
+
+colorHex.addEventListener("input", (e) => {
+  let value = e.target.value.toUpperCase();
+
+  value = value.replace(/[^#0-9A-F]/gi, "");
+
+  if (!value.startsWith("#")) {
+    value = "#" + value.replace(/#/g, "");
+  }
+
+  const parts = value.split("#");
+  if (parts.length > 2) {
+    value = "#" + parts.slice(1).join("");
+  }
+
+  if (value.length > 7) {
+    value = value.substring(0, 7);
+  }
+
+  e.target.value = value;
+
+  if (value.length === 7) {
+    colorInput.value = value;
+    updateColor(value);
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const randomColor = generateRandomColor();
